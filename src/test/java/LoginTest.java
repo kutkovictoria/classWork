@@ -1,6 +1,4 @@
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static org.testng.Assert.*;
 
@@ -26,12 +24,18 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void loginWithValidCredentials() {
+    public void loginWithValidCredentials() throws InterruptedException {
         startApplication();
         System.out.println("Enter correct credentials");
         System.out.println("Validate that user is signed in");
         boolean userIsLoggedIn = false;
         assertTrue(userIsLoggedIn, "User has not logged in");
+        Thread.sleep(5000);
     }
-
+    @Test
+    @Parameters({"login", "password"})
+    public void loginTest(String login, String password) {
+        System.out.println("using Login: " + login);
+        System.out.println("using Password: " + password);
+    }
 }
