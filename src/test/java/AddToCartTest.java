@@ -1,8 +1,6 @@
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import java.lang.ref.SoftReference;
 
 import static org.testng.Assert.*;
 
@@ -42,6 +40,5 @@ public class AddToCartTest extends TestBase
                 {20, 2, 10}
         };
    }
-
 }
 
